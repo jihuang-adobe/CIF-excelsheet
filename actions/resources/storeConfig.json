@@ -1,0 +1,9 @@
+{
+    "data": {
+        "storeConfig": {
+        "base_currency_code": "USD",
+        "store_code": "default",
+        "__typename": "StoreConfig"
+        }
+    }
+}

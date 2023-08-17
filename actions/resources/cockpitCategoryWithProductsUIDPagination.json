@@ -1,0 +1,523 @@
+{
+    "data": {
+      "categories": {
+        "items": [
+          {
+            "uid": "MTAy",
+            "products": {
+              "page_info": {
+                "total_pages": 9,
+                "__typename": "SearchResultPageInfo"
+              },
+              "total_count": 205,
+              "items": [
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "2022-WILSON-D8",
+                  "name": "2022 WILSON STAFF D8 12.5\" OUTFIELD BASEBALL GLOVE",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/b/wbw100869__00ab8aff33414fb6f08df7f8c2644547.png",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 549.95,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "2022-WILSON-DL",
+                  "name": "2022 WILSON STAFF DL 11.75\" INFIELD BASEBALL GLOVE",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/b/wbw100867__b30aeb44f66f78cbb0d83d6d2d5f3708.png",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 549.95,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "2022-WILSON-DP",
+                  "name": "2022 WILSON STAFF DP 11.75\" PITCHER'S BASEBALL GLOVE",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/b/wbw100868__c0aae6b1fb41fe8d2bb613551357e97b.png",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 549.95,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "SimpleProduct",
+                  "sku": "2023-MOOKIE-BETTS",
+                  "name": "2023 MOOKIE BETTS A2K® 1786SS GM 11.5” INFIELD BASEBALL GLOVE – INSTAGRAM EXCLUSIVE",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/b/wbw101311__5dc82425237adfbad5cf8fb30940d675.png",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 399.95,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "SimpleProduct",
+                  "sku": "2023-OMAHA-MERCURY",
+                  "name": "2023 OMAHA MERCURY A2K 1810SS 12.75” OUTFIELD BASEBALL GLOVE",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/b/wbw101278__98b58a8d1fb1ac29a4440d1470c5b1cd.png",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 399.95,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MH09",
+                  "name": "Abominable Hoodie",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/h/mh09-blue_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 69,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "WJ08",
+                  "name": "Adrienne Trek Jacket",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/j/wj08-gray_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 57,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "DownloadableProduct",
+                  "sku": "240-LV08",
+                  "name": "Advanced Pilates & Yoga (Strength)",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/l/t/lt05.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 18,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "WP07",
+                  "name": "Aeon Capri",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/p/wp07-black_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 48,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MS01",
+                  "name": "Aero Daily Fitness Tee",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/s/ms01-blue_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 24,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MP11",
+                  "name": "Aether Gym Pant ",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/p/mp11-brown_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 74,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "SimpleProduct",
+                  "sku": "24-MG04",
+                  "name": "Aim Analog Watch",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/g/mg04-bk-0.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 45,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MH12",
+                  "name": "Ajax Full-Zip Sweatshirt ",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/h/mh12-green_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 69,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "WSH10",
+                  "name": "Ana Running Short",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/s/wsh10-black_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 40,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "WSH06",
+                  "name": "Angel Light Running Short",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/s/wsh06-gray_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 42,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "WT08",
+                  "name": "Antonia Racer Tank",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/t/wt08-black_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 34,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MSH02",
+                  "name": "Apollo Running Short",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/s/msh02-black_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 32.5,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MSH11",
+                  "name": "Arcadio Gym Short",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/s/msh11-blue_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 20,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MT07",
+                  "name": "Argus All-Weather Tank",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/t/mt07-gray_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 10,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "WH09",
+                  "name": "Ariel Roll Sleeve Sweatshirt",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/h/wh09-purple_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 39,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "WSH04",
+                  "name": "Artemis Running Short",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/w/s/wsh04-black_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 45,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "VirtualProduct",
+                  "sku": "Assinatura Master Class",
+                  "name": "Assinatura MasterClass",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/a/masterclass.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 200,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MT11",
+                  "name": "Atlas Fitness Tank",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/t/mt11-blue_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 18,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MS12",
+                  "name": "Atomic Endurance Running Tee (Crew-Neck)",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/s/ms12-red_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 29,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                },
+                {
+                  "__typename": "ConfigurableProduct",
+                  "sku": "MS11",
+                  "name": "Atomic Endurance Running Tee (V-neck)",
+                  "thumbnail": {
+                    "url": "https://master-7rqtwti-3tc6abac5dub2.us-4.magentosite.cloud/media/catalog/product/cache/7018f71bd914a7b9f2dd6dc47cb36813/m/s/ms11-green_main_2.jpg",
+                    "__typename": "ProductImage"
+                  },
+                  "price_range": {
+                    "minimum_price": {
+                      "final_price": {
+                        "currency": "USD",
+                        "value": 28,
+                        "__typename": "Money"
+                      },
+                      "__typename": "ProductPrice"
+                    },
+                    "__typename": "PriceRange"
+                  }
+                }
+              ],
+              "__typename": "CategoryProducts"
+            },
+            "__typename": "CategoryTree"
+          }
+        ],
+        "__typename": "CategoryResult"
+      }
+    }
+  }

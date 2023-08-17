@@ -1,0 +1,62 @@
+{
+  "data": {
+    "categories": {
+      "items": [
+        {
+          "image": null,
+          "uid": "Mzk=",
+          "name": "What's New",
+          "url_key": "what-is-new",
+          "__typename": "CategoryTree",
+          "breadcrumbs": null
+        },
+        {
+          "image": null,
+          "uid": "MjE=",
+          "name": "Women",
+          "url_key": "women",
+          "__typename": "CategoryTree",
+          "breadcrumbs": null
+        },
+        {
+          "image": null,
+          "uid": "MTI=",
+          "name": "Men",
+          "url_key": "men",
+          "__typename": "CategoryTree",
+          "breadcrumbs": null
+        },
+        {
+          "image": null,
+          "uid": "Mw==",
+          "name": "Gear",
+          "url_key": "gear",
+          "__typename": "CategoryTree",
+          "breadcrumbs": null
+        },
+        {
+          "image": null,
+          "uid": "MTE=",
+          "name": "Gift Cards",
+          "url_key": "gift-cards",
+          "__typename": "CategoryTree",
+          "breadcrumbs": null
+        },
+        {
+          "image": null,
+          "uid": "Njk=",
+          "name": "Home Health Care",
+          "url_key": "home-health-care",
+          "__typename": "CategoryTree",
+          "breadcrumbs": null
+        }
+      ],
+      "page_info": {
+        "total_pages": 1,
+        "__typename": "SearchResultPageInfo"
+      },
+      "total_count": 6,
+      "__typename": "CategoryResult"
+    }
+  }
+}
