@@ -109,14 +109,15 @@ class ProductsLoader {
         console.log(params);
 
         if (params.categoryId) {
-            const product = response.data.filter((row) =>
+            const products = response.data.filter((row) =>
                 row.parent_category_id.includes(params.categoryId) || row.category_uid.includes(params.categoryId)
             );
+
             return Promise.resolve({
-                total: product.length,
+                total: products.length,
                 offset: params.currentPage * params.pageSize,
                 limit: params.pageSize,
-                products: product.map((product) => {
+                products: products.map((product) => {
                     return this.__mapProductRow(product);
                 })
             });

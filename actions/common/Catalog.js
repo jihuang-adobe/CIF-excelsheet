@@ -63,11 +63,12 @@ class CategoryTree {
             url_key: data.url_key,
             url_path: data.url_key,
             name: data.title,
+            staged: false,
             description: data.description,
             meta_description: 'Meta description ' + data.title,
             meta_keyword: 'Meta keywords for ' + data.title,
             meta_title: 'Meta title for ' + data.title,
-            product_count: 3
+            product_count: 10
         };
     }
 
@@ -110,7 +111,6 @@ class CategoryTree {
     products(param) {
         // We don't need to call this.__load() here because only fetching the products
         // of a category does not require fetching the category itself
-        console.log('categoryId:' + this.categoryId);
 
         return new Products({
             search: {
@@ -249,6 +249,7 @@ class Product {
             meta_description: 'Meta description ' + data.title,
             meta_keyword: 'Meta keywords for ' + data.title,
             meta_title: 'Meta title for ' + data.title,
+            updated_at: new Date(Date.now()).toISOString(),
             description: {
                 html: data.description
             },
