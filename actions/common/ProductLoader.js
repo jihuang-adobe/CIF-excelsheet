@@ -67,7 +67,7 @@ class ProductLoader {
         return Promise.resolve({
             sku: productSku,
             title: `Product #${productSku}`,
-            description: `Fetched product #${productSku} from ${actionParameters.url}`,
+            description: `Fetched product #${productSku}`,
             price: {
                 currency: 'USD',
                 amount: 12.34
