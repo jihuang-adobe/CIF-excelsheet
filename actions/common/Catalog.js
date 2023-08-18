@@ -68,7 +68,7 @@ class CategoryTree {
             meta_description: 'Meta description ' + data.title,
             meta_keyword: 'Meta keywords for ' + data.title,
             meta_title: 'Meta title for ' + data.title,
-            product_count: 10
+            product_count: 25
         };
     }
 
