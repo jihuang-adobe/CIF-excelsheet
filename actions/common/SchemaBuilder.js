@@ -175,7 +175,10 @@ class SchemaBuilder {
             commentDescriptions: true
         });
         //this.schema = graphqlSync(extendedGraphQLSchema, introspectionQuery);
-        this.schema = graphqlSync(graphQLSchema, introspectionQuery);
+        const ret = graphqlSync(graphQLSchema, introspectionQuery);
+        if(ret.length != undefined) {
+            this.schema = graphqlSync(graphQLSchema, introspectionQuery);
+        }
     }
 }
 

@@ -24,7 +24,7 @@ const {
     makeRemoteExecutableSchema,
     introspectSchema,
     mergeSchemas
-} = require('graphql-tools');
+} = require('@graphql-tools/schema');
 const { graphql, printSchema } = require('graphql');
 
 const {
@@ -84,7 +84,6 @@ async function resolve(params) {
         .then(async (remotes) => {
             if (cachedSchema == null) {
                 let remoteExecutableSchemas = [localSchema()];
-
                 if (params.remoteSchemas) {
                     let cachedSchemas = [];
 
@@ -342,7 +341,6 @@ async function fetchRemoteSchemasFromCache(state) {
  * default Magento schema.
  */
 function localSchema() {
-
     // The local schema only implements a limited set of fields of the Query root type
     let schemaBuilder = new SchemaBuilder(magentoSchema)
         .removeMutationType()
@@ -395,7 +393,6 @@ function localSchema() {
         'CountryCodeEnum'
     );
     */ // Jian
-
     return schemaBuilder.build(10);
 }
 
