@@ -108,31 +108,16 @@ class ProductsLoader {
 
         console.log(params);
 
+        let products = null;
+
         if (params.categoryId) {
-            const products = response.data.filter((row) =>
+            products = response.data.filter((row) =>
                 row.parent_category_id.includes(params.categoryId) || row.category_uid.includes(params.categoryId)
             );
-
-            return Promise.resolve({
-                total: products.length,
-                offset: params.currentPage * params.pageSize,
-                limit: params.pageSize,
-                products: products.map((product) => {
-                    return this.__mapProductRow(product);
-                })
-            });
         } else if (params.search != null) {
-            const product = response.data.filter((row) =>
+            products = response.data.filter((row) =>
                 row.product_name.toLowerCase().includes(params.search.length > 0 ? params.search.toLowerCase() : ' ')
             );
-            return Promise.resolve({
-                total: product.length,
-                offset: params.currentPage * params.pageSize,
-                limit: params.pageSize,
-                products: product.map((product) => {
-                    return this.__mapProductRow(product);
-                })
-            });
         } else if (params.filter) {
             if (params.filter.sku || params.filter.url_key) {
                 let keys = params.filter.sku
@@ -143,18 +128,9 @@ class ProductsLoader {
                     ? [params.filter.url_key.eq]
                     : params.filter.url_key.in;
 
-                const product = response.data.filter((row) =>
+                products = response.data.filter((row) =>
                     keys.includes(row.product_sku)
                 );
-
-                return Promise.resolve({
-                    total: product.length,
-                    offset: params.currentPage * params.pageSize,
-                    limit: params.pageSize,
-                    products: product.map((product) => {
-                        return this.__mapProductRow(product);
-                    })
-                });
             }
             if (params.filter.category_uid || params.filter.category_id) {
                 let keys;
@@ -175,34 +151,32 @@ class ProductsLoader {
                     }
                 }
 
-                const products = response.data.filter((row) =>
+                products = response.data.filter((row) =>
                     keys.includes(row.category_uid) || keys.includes(row.parent_category_id)
                 );
-
-                return Promise.resolve({
-                    total: products.length,
-                    offset: params.currentPage * params.pageSize,
-                    limit: params.pageSize,
-                    products: products.map((product) => {
-                        return this.__mapProductRow(product);
-                    })
-                });
             }
             if (params.filter.price) {
-                const products = response.data.filter((row) =>
+                products = response.data.filter((row) =>
                     row.product_price != null
                 );
-
-                return Promise.resolve({
-                    total: products.length,
-                    offset: params.currentPage * params.pageSize,
-                    limit: params.pageSize,
-                    products: products.map((product) => {
-                        return this.__mapProductRow(product);
-                    })
-                });
             }
         }
+
+        const productsPaginated = this.paginate(products, params.pageSize, params.currentPage);
+
+        return Promise.resolve({
+            total: products.length,
+            offset: params.currentPage * params.pageSize,
+            limit: params.pageSize,
+            products: productsPaginated.map((product) => {
+                return this.__mapProductRow(product);
+            })
+        });
+    }
+
+    paginate(array, page_size, page_number) {
+        // human-readable page numbers usually start with 1, so we reduce 1 in the first argument
+        return array.slice((page_number - 1) * page_size, page_number * page_size);
     }
 }
 
