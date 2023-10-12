@@ -68,7 +68,7 @@ class CategoryTree {
             meta_description: 'Meta description ' + data.title,
             meta_keyword: 'Meta keywords for ' + data.title,
             meta_title: 'Meta title for ' + data.title,
-            product_count: 25
+            product_count: data.product_count
         };
     }
 
@@ -95,7 +95,6 @@ class CategoryTree {
         });
     }
 
-
     // children_count is a String in the Magento schema
     get children_count() {
         return this.__load().then(() => {
@@ -107,11 +106,9 @@ class CategoryTree {
     }
 
     // Getters cannot have arguments, so we define a function
-    
     products(param) {
         // We don't need to call this.__load() here because only fetching the products
         // of a category does not require fetching the category itself
-
         return new Products({
             search: {
                 categoryId: this.categoryId,
@@ -141,7 +138,6 @@ class Products {
         this.actionParameters = parameters.actionParameters;
         this.productsLoader = parameters.productsLoader || new ProductsLoader(parameters.actionParameters);
         this.categoryTreeLoader = parameters.categoryTreeLoader || new CategoryTreeLoader(parameters.actionParameters);
-
         /**
          * This class returns a Proxy to avoid having to implement a getter for all properties.
          */
@@ -149,7 +145,7 @@ class Products {
     }
 
     __load() {
-        console.debug('Loading products for ' + JSON.stringify(this.search, null, 0));
+        console.debug('Loading products for ' + JSON.stringify(this.search, null, 0) + 'with graphql context ' + JSON.stringify(this.graphqlContext));
         return this.productsLoader.load(this.search);
     }
 

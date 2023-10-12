@@ -90,14 +90,16 @@ class CategoryTreeLoader {
             row.category_uid.includes(categoryId) || row.parent_category_id.includes(categoryId)
         );
 
+        const productCount = category.length;
+
         const subCategories = await getSubcategories(actionParameters.DATASOURCE, categoryId);
 
         return Promise.resolve(
-            this.__mapProductRow(category.pop(), categoryId, subCategories)
+            this.__mapProductRow(category.pop(), productCount, categoryId, subCategories)
         );
     }
 
-    __mapProductRow(category, categoryId, subCategories) {
+    __mapProductRow(category, productCount, categoryId, subCategories) {
         let retCategoryId = '';
 
         if(typeof categoryId === 'string') {
@@ -115,6 +117,8 @@ class CategoryTreeLoader {
         if(!category) {
             return retCategory;
         }
+
+        retCategory.product_count = productCount;
 
         retCategory.id = parseInt(category.category_id);
         retCategory.url_key = category.category_uid;
