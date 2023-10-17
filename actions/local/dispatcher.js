@@ -29,7 +29,7 @@ const { graphql, printSchema } = require('graphql');
 
 const {
     getRemoteJSON,
-    getAllCategoryIds
+    getSubcategories
 } = require('../services/remoteJSON.js');
 
 const { Products, CategoryTree } = require('../common/Catalog.js');
@@ -131,14 +131,10 @@ async function resolve(params) {
                 dummy: 'Can be some authentication token'
             };
 
-            console.log(params);
-
             // We instantiate some loaders common to the "products" and "category" resolvers
             let categoryTreeLoader = new CategoryTreeLoader(params);
             let productsLoader = new ProductsLoader(params);
-
-            // get all categories ready in case need it
-            let allCategoryIds = await getAllCategoryIds(params.DATASOURCE);
+            const dataSource = params.DATASOURCE;
 
             // Local resolvers object
             let resolvers = {
@@ -160,20 +156,13 @@ async function resolve(params) {
                         productsLoader: productsLoader
                     });
                 },
-                categoryList: (params, context) => {
+                categoryList: async (params, context) => {
                     // returns an Array of categories
-                    let categoryId = params.filters.ids
-                        ? params.filters.ids.eq
-                        : params.filters.category_uid
-                        ? (params.filters.category_uid.in || params.filters.category_uid.eq)
-                        : params.filters.url_key
-                        ? params.filters.url_key.eq
-                        : params.filters.url_path
-                        ? params.filters.url_path.eq
-                        : 1;
+                    const requestingCategoryIds = await getCategoryIds(params, queryOperationName, dataSource);
+
                     return [
                         new CategoryTree({
-                            categoryId: categoryId,
+                            categoryId: requestingCategoryIds.pop(),
                             graphqlContext: context,
                             actionParameters: params,
                             categoryTreeLoader: categoryTreeLoader,
@@ -181,52 +170,14 @@ async function resolve(params) {
                         })
                     ];
                 },
-                categories: (params, context) => {
-                    // returns an Array of categories
-                    
-                    let categoryIds = [];
-                    if (params.filters.parent_category_uid) {
-                        categoryIds.push(params.filters.parent_category_uid.eq);
-                    } else if (params.filters.category_uid) {
-                        if(params.filters.category_uid.eq) {
-                            categoryIds.push(params.filters.category_uid.eq);
-                        }
-
-                        if(params.filters.category_uid.in) {
-                            categoryIds = params.filters.category_uid.in;
-                        }
-                    } else {
-                        categoryIds.push('0');
-                    }
-
-                    // this is the tricky bit
-                    // is the query for sub categories
-                    // or for products in current category
-                    let isSubdirectoryQuery = false;
-                    if(queryOperationName == 'cockpitCategoryByParentUIDPagination' ||
-                        queryOperationName == 'categoryByFilterPagination') {
-                        isSubdirectoryQuery = true;
-
-                        // if it is for sub categories determine if it is sub categories under root or not
-                        // if id is not found in all category ids, then it is a root category id, and all categories should be queried
-                        // else, we just need that category id
-                        const interSectedCategoryIds = categoryIds.filter(value => allCategoryIds.includes(value));
-
-                        if(interSectedCategoryIds.length > 0) {
-                            categoryIds = interSectedCategoryIds;
-                        } else {
-                            categoryIds = allCategoryIds;
-                        }
-                    }
+                categories: async (params, context) => {
+                    const requestingCategoryIds = await getCategoryIds(params, queryOperationName, dataSource);
 
                     let CategoryTreeArray = [];
-                    
-                    
-                    // if we are asking for return on sub categories and know there are no sub categories, just don't do it
-                    if(isSubdirectoryQuery == true && categoryIds.length == 1) {
 
-                    } else {
-                        CategoryTreeArray = categoryIds.map((categoryId) => 
+                    // if we are asking for return on sub categories and know there are no sub categories, just don't do it
+                    if(requestingCategoryIds.length > 0) {
+                        CategoryTreeArray = requestingCategoryIds.map((categoryId) => 
                             new CategoryTree({
                                 categoryId: categoryId,
                                 graphqlContext: context,
@@ -276,6 +227,74 @@ async function resolve(params) {
             logger.error(error);
             return errorResponse(500, 'server error', logger);
         });
+}
+
+/**
+ * return category id(s) found in param
+ */
+async function getCategoryIds(params, queryOperationName, dataSource) {
+    let categoryId;
+    let categoryIds = [];
+
+    if(params.filters) {
+        if(params.filters.ids) {
+            if(params.filters.ids.eq) {
+                categoryId = params.filters.ids.eq;
+            }
+        }
+
+        if(params.filters.category_uid) {
+            if(params.filters.category_uid.in) {
+                categoryId =  params.filters.category_uid.in;
+            }
+            if(params.filters.category_uid.eq) {
+                categoryId = params.filters.category_uid.eq;
+            }
+        }
+
+        if(params.filters.url_key) {
+            if(params.filters.url_key.eq) {
+                categoryId = params.filters.url_key.eq;
+            }
+        }
+
+        if(params.filters.url_path) {
+            if(params.filters.url_path.eq) {
+                categoryId = params.filters.url_path.eq;
+            }
+        }
+
+        if(params.filters.parent_category_uid) {
+            if(params.filters.parent_category_uid.eq) {
+                categoryId = params.filters.parent_category_uid.eq;
+            }
+        }
+
+        if(params.filters.category_uid) {
+            if(params.filters.category_uid.eq) {
+                categoryId = params.filters.category_uid.eq;
+            }
+            if(params.filters.category_uid.in) {
+                categoryId = params.filters.category_uid.in;
+            }
+        }
+    }
+
+    if(!categoryId) {
+        return categoryIds;
+    }
+
+    console.log('datasource');
+    console.log(dataSource);
+
+    categoryIds.push(categoryId);
+
+    // if these operations, get sub categories based on root category id
+    if(queryOperationName == 'cockpitCategoryByParentUIDPagination' || queryOperationName == 'categoryByFilterPagination') {
+        categoryIds = await getSubcategories(dataSource, categoryId);
+    }
+
+    return categoryIds;
 }
 
 /**
