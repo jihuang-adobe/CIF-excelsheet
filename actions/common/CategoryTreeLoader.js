@@ -84,7 +84,7 @@ class CategoryTreeLoader {
             subcategories: new String(categoryId).length < 3 ? [categoryId * 10 + 1, categoryId * 10 + 2] : []
         });
         */
-        const response = await getRemoteJSON(actionParameters.DATASOURCE);
+        const response = await getRemoteJSON(actionParameters.dataSourceWithStore);
 
         const category = response.data.filter((row) =>
             row.category_uid.includes(categoryId) || row.parent_category_id.includes(categoryId)

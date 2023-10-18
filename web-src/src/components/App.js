@@ -43,14 +43,18 @@ const App = props => {
     return (
         <GraphiQL
             style={{ height: '100vh' }}
-            fetcher={async (graphQLParams) => {
+            fetcher={async (graphQLParams, headers) => {
+                if(!headers.headers) {
+                    headers.headers = {};
+                }
+
+                headers.headers['Accept'] =  'application/json';
+                headers.headers['Content-Type'] = 'application/json';
+                headers.headers['x-ow-extra-logging'] = 'on';
+
                 const data = await fetch(url.replace('adobeio-static', 'adobeioruntime'),{
                     method: 'POST',
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                        'x-ow-extra-logging': 'on'
-                    },
+                    headers: headers.headers,
                     body: JSON.stringify(graphQLParams),
                     credentials: 'same-origin'
                 });

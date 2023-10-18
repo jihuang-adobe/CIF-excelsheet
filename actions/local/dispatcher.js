@@ -57,6 +57,12 @@ async function resolve(params) {
     let remoteResolvers = null;
     let state = null; // The aio-lib-state object
     let storeSchema = false; // If true, we will put the remote schemas in the aio-lib-state cache
+    let store = params.__ow_headers['store'];
+    if(!store) {
+        store = 'wknd';
+    }
+
+    params.dataSourceWithStore = `${params.DATASOURCE}?sheet=${store}`;
 
     // If the schema is not cached, we try to get the remote schemas from the aio-lib-state cache
     if (cachedSchema == null && Number.isInteger(params['use-aio-cache'])) {
@@ -134,7 +140,7 @@ async function resolve(params) {
             // We instantiate some loaders common to the "products" and "category" resolvers
             let categoryTreeLoader = new CategoryTreeLoader(params);
             let productsLoader = new ProductsLoader(params);
-            const dataSource = params.DATASOURCE;
+            const dataSource = params.dataSourceWithStore;
 
             // Local resolvers object
             let resolvers = {
@@ -283,9 +289,6 @@ async function getCategoryIds(params, queryOperationName, dataSource) {
     if(!categoryId) {
         return categoryIds;
     }
-
-    console.log('datasource');
-    console.log(dataSource);
 
     categoryIds.push(categoryId);
 

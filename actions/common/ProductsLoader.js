@@ -104,7 +104,7 @@ class ProductsLoader {
      * @returns {Promise} A Promise with the products data.
      */
     async __searchProducts(params, actionParameters) {
-        const response = await getRemoteJSON(actionParameters.DATASOURCE);
+        const response = await getRemoteJSON(actionParameters.dataSourceWithStore);
 
         console.log(params);
 

@@ -12,7 +12,7 @@ application:
             runtime: 'nodejs:14'
             inputs:
               LOG_LEVEL: debug
-              DATASOURCE: https://main--wknd--hlxsites.hlx.page/drafts/jihuang/wknd/adventures/adventures.json?sheet=jihuang
+              DATASOURCE: https://main--cif--jihuang-adobe.hlx.page/products.json
               use-aio-cache: false # number of seconds for caching; set to false or remove to disable caching
               url: https://a-dummy-url.com
               #remoteSchemas: # Action with smaller order has "merge priority" in schema conflicts
