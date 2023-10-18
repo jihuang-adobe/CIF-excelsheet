@@ -166,15 +166,21 @@ async function resolve(params) {
                     // returns an Array of categories
                     const requestingCategoryIds = await getCategoryIds(params, queryOperationName, dataSource);
 
-                    return [
-                        new CategoryTree({
-                            categoryId: requestingCategoryIds.pop(),
-                            graphqlContext: context,
-                            actionParameters: params,
-                            categoryTreeLoader: categoryTreeLoader,
-                            productsLoader: productsLoader
-                        })
-                    ];
+                    let CategoryTreeArray = [];
+
+                    if(requestingCategoryIds.length > 0) {
+                        CategoryTreeArray = requestingCategoryIds.map((categoryId) => 
+                            new CategoryTree({
+                                categoryId: categoryId,
+                                graphqlContext: context,
+                                actionParameters: params,
+                                categoryTreeLoader: categoryTreeLoader,
+                                productsLoader: productsLoader
+                            })
+                        );
+                    }
+
+                    return CategoryTreeArray;
                 },
                 categories: async (params, context) => {
                     const requestingCategoryIds = await getCategoryIds(params, queryOperationName, dataSource);
@@ -239,61 +245,50 @@ async function resolve(params) {
  * return category id(s) found in param
  */
 async function getCategoryIds(params, queryOperationName, dataSource) {
-    let categoryId;
     let categoryIds = [];
 
     if(params.filters) {
         if(params.filters.ids) {
             if(params.filters.ids.eq) {
-                categoryId = params.filters.ids.eq;
-            }
-        }
-
-        if(params.filters.category_uid) {
-            if(params.filters.category_uid.in) {
-                categoryId =  params.filters.category_uid.in;
-            }
-            if(params.filters.category_uid.eq) {
-                categoryId = params.filters.category_uid.eq;
+                categoryIds.push(params.filters.ids.eq);
             }
         }
 
         if(params.filters.url_key) {
             if(params.filters.url_key.eq) {
-                categoryId = params.filters.url_key.eq;
+                categoryIds.push(params.filters.url_key.eq);
             }
         }
 
         if(params.filters.url_path) {
             if(params.filters.url_path.eq) {
-                categoryId = params.filters.url_path.eq;
+                categoryIds.push(params.filters.url_path.eq);
             }
         }
 
         if(params.filters.parent_category_uid) {
             if(params.filters.parent_category_uid.eq) {
-                categoryId = params.filters.parent_category_uid.eq;
+                categoryIds.push(params.filters.parent_category_uid.eq);
             }
         }
 
         if(params.filters.category_uid) {
             if(params.filters.category_uid.eq) {
-                categoryId = params.filters.category_uid.eq;
+                categoryIds.push(params.filters.category_uid.eq);
             }
             if(params.filters.category_uid.in) {
-                categoryId = params.filters.category_uid.in;
+                const categoryIdIn = params.filters.category_uid.in;
+
+                categoryIdIn.forEach((categoryId) => {
+                    categoryIds.push(categoryId);
+                })
             }
         }
     }
 
-    if(!categoryId) {
-        return categoryIds;
-    }
-
-    categoryIds.push(categoryId);
-
     // if these operations, get sub categories based on root category id
     if(queryOperationName == 'cockpitCategoryByParentUIDPagination' || queryOperationName == 'categoryByFilterPagination') {
+        const categoryId = categoryIds.pop();
         categoryIds = await getSubcategories(dataSource, categoryId);
     }
 
