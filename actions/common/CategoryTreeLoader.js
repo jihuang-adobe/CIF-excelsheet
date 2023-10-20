@@ -92,7 +92,7 @@ class CategoryTreeLoader {
 
         const productCount = category.length;
 
-        const subCategories = await getSubcategories(actionParameters.DATASOURCE, categoryId);
+        const subCategories = await getSubcategories(actionParameters.dataSourceWithStore, categoryId);
 
         return Promise.resolve(
             this.__mapProductRow(category.pop(), productCount, categoryId, subCategories)
